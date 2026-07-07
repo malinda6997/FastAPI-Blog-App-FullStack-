@@ -1,0 +1,43 @@
+# === Python Virtual Environments ===
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+include/
+
+# === FastAPI / Python Cache ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# === Environment Variables / Secrets ===
+.env
+.env.local
+.env.*
+secrets.json
+
+# === OS & IDE Files (Optional but good) ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === Build and Distributions ===
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
