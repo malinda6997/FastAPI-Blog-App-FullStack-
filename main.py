@@ -1,10 +1,13 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
-
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
-#data list
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+templates = Jinja2Templates(directory="templates")
+
 posts: list[dict] = [
     {
         "id": 1,
@@ -78,11 +81,14 @@ posts: list[dict] = [
     }
 ]
 
-
-
-@app.get("/", response_class=HTMLResponse)
-def home():
-     return F"<h1>My Blog</h1><p>Welcome to my blog!</p>"
+@app.get("/")
+def home(request: Request):
+    # අලුත් FastAPI/Starlette syntax එක: (request, template_name, context_dict)
+    return templates.TemplateResponse(
+        request, 
+        "home.html", 
+        {"posts": posts, "title": "Home"}
+    )
      
 @app.get("/api/posts")
 def get_posts():

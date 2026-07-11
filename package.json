@@ -1,0 +1,25 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:watch": "tailwindcss -i ./static/src/input.css -o ./static/dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malinda6997/FastAPI-Blog-App-FullStack-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/malinda6997/FastAPI-Blog-App-FullStack-/issues"
+  },
+  "homepage": "https://github.com/malinda6997/FastAPI-Blog-App-FullStack-#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.3.2"
+  }
+}

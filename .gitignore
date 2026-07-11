@@ -16,13 +16,24 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
+# === Node.js & Frontend Assets (Added for Tailwind) ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# === Tailwind Standalone Executable & Compiled CSS (Added) ===
+tailwindcss.exe
+static/dist/
+
 # === Environment Variables / Secrets ===
 .env
 .env.local
 .env.*
 secrets.json
 
-# === OS & IDE Files (Optional but good) ===
+# === OS & IDE Files ===
 .vscode/
 .idea/
 .DS_Store

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Page Title Section -->
+<div class="mb-8 border-b border-slate-200 pb-5">
+    <h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl tracking-tight">
+        Latest Articles
+    </h1>
+    <p class="mt-2 text-lg text-slate-500">
+        Explore insights, tutorials, and ecosystem updates.
+    </p>
+</div>
+
+<!-- Blog Posts Grid / List -->
+<div class="grid gap-6 md:grid-cols-1">
+    {% for post in posts %}
+    <article class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+        <div>
+            <!-- Author & Date Header -->
+            <div class="flex items-center space-x-2 text-sm text-slate-500 mb-3">
+                <span class="font-medium text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                    {{ post.author }}
+                </span>
+                <span>&bull;</span>
+                <span>{{ post.date_posted }}</span>
+            </div>
+
+            <!-- Blog Post Title (h3) -->
+            <h3 class="text-xl font-bold text-slate-900 hover:text-blue-600 transition mb-2">
+                <a href="#">{{ post.title }}</a>
+            </h3>
+
+            <!-- Blog Post Content (p) -->
+            <p class="text-slate-600 leading-relaxed text-base line-clamp-3">
+                {{ post.content }}
+            </p>
+        </div>
+
+        <!-- Read More Button Link -->
+        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center">
+            <a href="#" class="text-sm font-semibold text-blue-600 hover:text-indigo-600 flex items-center gap-1 group transition">
+                Read article 
+                <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+{% endblock %}
